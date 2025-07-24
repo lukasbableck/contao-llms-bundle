@@ -2,8 +2,8 @@
 
 {% if description|default %}
 > {{ description|default|raw }}
-{% endif %}
 
+{% endif %}
 {% for element in elements|default -%}
 	{{- content_element(element.id) -}}
 {%- endfor %}

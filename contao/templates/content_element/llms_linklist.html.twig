@@ -1,0 +1,29 @@
+{% extends '@Contao/content_element/_llms_base.html.twig' %}
+
+{% block text_content -%}
+{%- for link in data.llmsLinklist|default|deserialize %}
+- [{{ link.linkTitle|default(link.linkURL|insert_tag) }}]({{ link.linkURL|insert_tag }})
+{%- if link.linkDetails -%}
+: {{ link.linkDetails }}
+{%- endif -%}
+{%- if not loop.last %}
+
+{% endif -%}
+{%- endfor -%}
+{%- endblock %}
+
+{% block backend_content %}
+	{{ parent() }}
+	{% if data.llmsLinklist|default %}
+		<ul>
+			{% for link in data.llmsLinklist|default|deserialize %}
+				<li>
+					<a href="{{ link.linkURL|insert_tag }}">{{ link.linkTitle|default(link.linkURL|insert_tag) }}</a>
+					{%- if link.linkDetails -%}
+						: {{ link.linkDetails }}
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+{% endblock %}

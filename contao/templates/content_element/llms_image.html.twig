@@ -1,0 +1,18 @@
+{% extends '@Contao/content_element/_llms_base.html.twig' %}
+
+{% block text_content -%}
+![{{ image.metadata.alt|default }}](
+	{{- host -}}
+	{{- image.image.imagesrc -}}
+		{%- if image.metadata.title|default %}
+ "{{ image.metadata.title }}"
+		{%- endif -%})
+{%- endblock %}
+
+{% block backend_content %}
+	{% if data.singleSRC|default %}
+		{{ include('@Contao/component/_figure.html.twig', {
+			figure: figure(data.singleSRC, [300, null, 'proportional']),
+		}) }}
+	{% endif %}
+{% endblock %}

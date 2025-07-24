@@ -1,0 +1,21 @@
+{% extends '@Contao/content_element/_llms_base.html.twig' %}
+
+{% block text_content -%}
+{%- for item in data.listitems|default|deserialize %}
+- {{ item|default|raw }}
+{%- if not loop.last %}
+
+{% endif -%}
+{%- endfor -%}
+{%- endblock %}
+
+{% block backend_content %}
+	{{ parent() }}
+	{% if data.listitems|default %}
+		<ul>
+			{% for item in data.listitems|default|deserialize %}
+				<li>{{ item|default|raw }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+{% endblock %}

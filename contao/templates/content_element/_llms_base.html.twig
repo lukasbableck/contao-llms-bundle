@@ -1,0 +1,21 @@
+{% if not as_editor_view -%}
+
+{% block content -%}
+{% if data.llmsHeadline %}
+## {{ data.llmsHeadline }}
+
+{% endif %}
+{% block text_content -%}
+{{ data.llmsText|default|raw }}
+{%- endblock -%}
+{%- endblock %}
+
+
+{% else %}
+	{% block backend_content %}
+		{% if data.llmsHeadline %}
+			<h2>{{ data.llmsHeadline }}</h2>
+		{% endif %}
+		{{ data.llmsText|default|raw }}
+	{% endblock %}
+{% endif %}

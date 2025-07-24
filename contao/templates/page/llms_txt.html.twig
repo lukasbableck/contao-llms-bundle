@@ -1,0 +1,9 @@
+# {{ title }}
+
+{% if description|default %}
+> {{ description|default|raw }}
+{% endif %}
+
+{% for element in elements|default -%}
+	{{- content_element(element.id) -}}
+{%- endfor %}

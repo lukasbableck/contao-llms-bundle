@@ -1,0 +1,11 @@
+{% extends '@Contao/content_element/_llms_base.html.twig' %}
+
+{%- block text_content -%}
+> {{ data.llmsText|default|raw }}
+{%- endblock -%}
+
+{% block backend_content %}
+	<blockquote>
+		{{ parent() }}
+	</blockquote>
+{% endblock %}

@@ -10,12 +10,21 @@ $GLOBALS['TL_DCA']['tl_content']['palettes']['llms_paragraph'] = '{type_legend},
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['llmsHeadline'] = [
 	'inputType' => 'text',
-	'eval' => ['maxlength' => 255, 'tl_class' => 'w50 clr'],
+	'eval' => [
+		'maxlength' => 255,
+		'tl_class' => 'w50 clr',
+		'decodeEntities' => true,
+		'preserveTags' => true,
+	],
 	'sql' => "varchar(255) NOT NULL default ''",
 ];
 $GLOBALS['TL_DCA']['tl_content']['fields']['llmsText'] = [
 	'inputType' => 'textarea',
-	'eval' => ['tl_class' => 'clr'],
+	'eval' => [
+		'tl_class' => 'clr',
+		'decodeEntities' => true,
+		'preserveTags' => true,
+	],
 	'sql' => 'text NULL',
 ];
 $GLOBALS['TL_DCA']['tl_content']['fields']['llmsLinklist'] = [
@@ -25,7 +34,8 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['llmsLinklist'] = [
 		'linkTitle' => [
 			'inputType' => 'text',
 			'eval' => [
-                'decodeEntities' => true,
+				'decodeEntities' => true,
+				'preserveTags' => true,
 				'tl_class' => 'w50 clr',
 			],
 		],
@@ -42,7 +52,8 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['llmsLinklist'] = [
 		'linkDetails' => [
 			'inputType' => 'text',
 			'eval' => [
-                'decodeEntities' => true,
+				'decodeEntities' => true,
+				'preserveTags' => true,
 				'tl_class' => 'clr',
 			],
 		],

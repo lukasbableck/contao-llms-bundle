@@ -2,12 +2,12 @@
 
 $GLOBALS['TL_DCA']['tl_page']['fields']['llmsTitle'] = [
 	'inputType' => 'text',
-	'eval' => ['maxlength' => 255, 'tl_class' => 'w50', 'mandatory' => true],
+	'eval' => ['maxlength' => 255, 'basicEntities' => true, 'tl_class' => 'w50', 'mandatory' => true],
 	'sql' => "varchar(255) NOT NULL default ''",
 ];
 $GLOBALS['TL_DCA']['tl_page']['fields']['llmsDescription'] = [
 	'inputType' => 'textarea',
-	'eval' => ['tl_class' => 'clr'],
+	'eval' => ['decodeEntities' => true, 'tl_class' => 'clr'],
 	'sql' => "text NOT NULL default ''",
 ];
 

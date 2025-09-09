@@ -25,6 +25,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['llmsLinklist'] = [
 		'linkTitle' => [
 			'inputType' => 'text',
 			'eval' => [
+                'decodeEntities' => true,
 				'tl_class' => 'w50 clr',
 			],
 		],
@@ -41,6 +42,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['llmsLinklist'] = [
 		'linkDetails' => [
 			'inputType' => 'text',
 			'eval' => [
+                'decodeEntities' => true,
 				'tl_class' => 'clr',
 			],
 		],

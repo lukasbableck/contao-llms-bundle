@@ -10,9 +10,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 #[AsContentElement(self::TYPE, category: 'llms')]
 class LlmsBlockquoteController extends AbstractContentElementController {
-	public const TYPE = 'llms_blockquote';
+    public const TYPE = 'llms_blockquote';
 
-	public function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response {
-		return $template->getResponse();
-	}
+    public function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response {
+        return $template->getResponse();
+    }
 }

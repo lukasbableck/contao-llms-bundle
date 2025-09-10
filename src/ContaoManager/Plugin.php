@@ -8,7 +8,7 @@ use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Lukasbableck\ContaoLlmsBundle\ContaoLlmsBundle;
 
 class Plugin implements BundlePluginInterface {
-	public function getBundles(ParserInterface $parser): array {
-		return [BundleConfig::create(ContaoLlmsBundle::class)->setLoadAfter([ContaoCoreBundle::class])];
-	}
+    public function getBundles(ParserInterface $parser): array {
+        return [BundleConfig::create(ContaoLlmsBundle::class)->setLoadAfter([ContaoCoreBundle::class])];
+    }
 }

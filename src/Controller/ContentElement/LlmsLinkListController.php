@@ -10,9 +10,9 @@ use Symfony\Component\HttpFoundation\Response;
 
 #[AsContentElement(self::TYPE, category: 'llms')]
 class LlmsLinkListController extends AbstractContentElementController {
-	public const TYPE = 'llms_linklist';
+    public const TYPE = 'llms_linklist';
 
-	public function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response {
-		return $template->getResponse();
-	}
+    public function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response {
+        return $template->getResponse();
+    }
 }

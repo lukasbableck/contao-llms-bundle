@@ -6,11 +6,11 @@ use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 
 #[AsCallback('tl_page', 'list.operations.children.button')]
 class PageChildrenOperationListener {
-	public function __invoke(DataContainerOperation $operation): void {
-		if ($operation->getRecord()['type'] !== 'llms') {
-			$operation->setHtml('');
+    public function __invoke(DataContainerOperation $operation): void {
+        if ($operation->getRecord()['type'] !== 'llms') {
+            $operation->setHtml('');
 
-			return;
-		}
-	}
+            return;
+        }
+    }
 }

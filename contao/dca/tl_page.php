@@ -18,7 +18,7 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['llmsDescription'] = [
         'preserveTags' => true,
         'tl_class' => 'clr',
     ],
-    'sql' => "text NOT NULL default ''",
+    'sql' => "text NULL",
 ];
 
 $GLOBALS['TL_DCA']['tl_page']['palettes']['llms'] = '{title_legend},title,type;{routing_legend},alias,routePath,routePriority,routeConflicts;{meta_legend},llmsTitle,llmsDescription;{cache_legend:hide},includeCache;{chmod_legend:hide},includeChmod;{expert_legend:hide},sitemap,hide;{publish_legend},published,start,stop';
